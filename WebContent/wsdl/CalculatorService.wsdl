@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://calc.project.cp8202.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://calc.project.cp8202.com" xmlns:intf="http://calc.project.cp8202.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://calc.project.cp8202.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="add">
+    <complexType>
+     <sequence>
+      <element name="value1" type="xsd:double"/>
+      <element name="value2" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addResponse">
+    <complexType>
+     <sequence>
+      <element name="addReturn" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="subtractNumbers">
+    <complexType>
+     <sequence>
+      <element name="param1" type="xsd:double"/>
+      <element name="param2" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="subtractNumbersResponse">
+    <complexType>
+     <sequence>
+      <element name="subtractNumbersReturn" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="divideNumbers">
+    <complexType>
+     <sequence>
+      <element name="param1" type="xsd:double"/>
+      <element name="param2" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="divideNumbersResponse">
+    <complexType>
+     <sequence>
+      <element name="divideNumbersReturn" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="multiplyNumbers">
+    <complexType>
+     <sequence>
+      <element name="param1" type="xsd:double"/>
+      <element name="param2" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="multiplyNumbersResponse">
+    <complexType>
+     <sequence>
+      <element name="multiplyNumbersReturn" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="multiplyNumbersResponse">
+
+      <wsdl:part element="impl:multiplyNumbersResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="subtractNumbersResponse">
+
+      <wsdl:part element="impl:subtractNumbersResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="multiplyNumbersRequest">
+
+      <wsdl:part element="impl:multiplyNumbers" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="divideNumbersRequest">
+
+      <wsdl:part element="impl:divideNumbers" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="subtractNumbersRequest">
+
+      <wsdl:part element="impl:subtractNumbers" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="divideNumbersResponse">
+
+      <wsdl:part element="impl:divideNumbersResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addResponse">
+
+      <wsdl:part element="impl:addResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addRequest">
+
+      <wsdl:part element="impl:add" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="CalculatorService">
+
+      <wsdl:operation name="add">
+
+         <wsdl:input message="impl:addRequest" name="addRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addResponse" name="addResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="subtractNumbers">
+
+         <wsdl:input message="impl:subtractNumbersRequest" name="subtractNumbersRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:subtractNumbersResponse" name="subtractNumbersResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="divideNumbers">
+
+         <wsdl:input message="impl:divideNumbersRequest" name="divideNumbersRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:divideNumbersResponse" name="divideNumbersResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="multiplyNumbers">
+
+         <wsdl:input message="impl:multiplyNumbersRequest" name="multiplyNumbersRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:multiplyNumbersResponse" name="multiplyNumbersResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="CalculatorServiceSoapBinding" type="impl:CalculatorService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="add">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="subtractNumbers">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="subtractNumbersRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="subtractNumbersResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="divideNumbers">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="divideNumbersRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="divideNumbersResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="multiplyNumbers">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="multiplyNumbersRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="multiplyNumbersResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="CalculatorServiceService">
+
+      <wsdl:port binding="impl:CalculatorServiceSoapBinding" name="CalculatorService">
+
+         <wsdlsoap:address location="http://localhost:8080/jaxws-calculator-cloud-2/services/CalculatorService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

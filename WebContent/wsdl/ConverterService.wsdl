@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://calc.project.cp8202.com" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://calc.project.cp8202.com">
+    <wsdl:documentation>
+		Please Type your service description here
+	</wsdl:documentation>
+    <wsdl:types>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://calc.project.cp8202.com">
+            <xs:element name="FahrenheitToCelsius">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="param1" type="xs:double"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="FahrenheitToCelsiusResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="return" type="xs:double"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="CelsiusToFahrenheit">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="param1" type="xs:double"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="CelsiusToFahrenheitResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="return" type="xs:double"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="MetreToYard">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="param1" type="xs:double"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="MetreToYardResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="return" type="xs:double"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="YardToMetre">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="param1" type="xs:double"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="YardToMetreResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="return" type="xs:double"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="KilometreToMile">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="param1" type="xs:double"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="KilometreToMileResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="return" type="xs:double"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="MileToKilometre">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="param1" type="xs:double"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="MileToKilometreResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="return" type="xs:double"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="KilogramtoPound">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="param1" type="xs:double"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="KilogramtoPoundResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="return" type="xs:double"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="PoundToKilogram">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="param1" type="xs:double"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="PoundToKilogramResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="return" type="xs:double"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="FeetToMetre">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="param1" type="xs:double"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="FeetToMetreResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="return" type="xs:double"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="MetreToFeet">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="param1" type="xs:double"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="MetreToFeetResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="return" type="xs:double"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="CelsiusToFahrenheitRequest">
+        <wsdl:part name="parameters" element="ns:CelsiusToFahrenheit"/>
+    </wsdl:message>
+    <wsdl:message name="CelsiusToFahrenheitResponse">
+        <wsdl:part name="parameters" element="ns:CelsiusToFahrenheitResponse"/>
+    </wsdl:message>
+    <wsdl:message name="KilometreToMileRequest">
+        <wsdl:part name="parameters" element="ns:KilometreToMile"/>
+    </wsdl:message>
+    <wsdl:message name="KilometreToMileResponse">
+        <wsdl:part name="parameters" element="ns:KilometreToMileResponse"/>
+    </wsdl:message>
+    <wsdl:message name="PoundToKilogramRequest">
+        <wsdl:part name="parameters" element="ns:PoundToKilogram"/>
+    </wsdl:message>
+    <wsdl:message name="PoundToKilogramResponse">
+        <wsdl:part name="parameters" element="ns:PoundToKilogramResponse"/>
+    </wsdl:message>
+    <wsdl:message name="KilogramtoPoundRequest">
+        <wsdl:part name="parameters" element="ns:KilogramtoPound"/>
+    </wsdl:message>
+    <wsdl:message name="KilogramtoPoundResponse">
+        <wsdl:part name="parameters" element="ns:KilogramtoPoundResponse"/>
+    </wsdl:message>
+    <wsdl:message name="MileToKilometreRequest">
+        <wsdl:part name="parameters" element="ns:MileToKilometre"/>
+    </wsdl:message>
+    <wsdl:message name="MileToKilometreResponse">
+        <wsdl:part name="parameters" element="ns:MileToKilometreResponse"/>
+    </wsdl:message>
+    <wsdl:message name="MetreToYardRequest">
+        <wsdl:part name="parameters" element="ns:MetreToYard"/>
+    </wsdl:message>
+    <wsdl:message name="MetreToYardResponse">
+        <wsdl:part name="parameters" element="ns:MetreToYardResponse"/>
+    </wsdl:message>
+    <wsdl:message name="FeetToMetreRequest">
+        <wsdl:part name="parameters" element="ns:FeetToMetre"/>
+    </wsdl:message>
+    <wsdl:message name="FeetToMetreResponse">
+        <wsdl:part name="parameters" element="ns:FeetToMetreResponse"/>
+    </wsdl:message>
+    <wsdl:message name="FahrenheitToCelsiusRequest">
+        <wsdl:part name="parameters" element="ns:FahrenheitToCelsius"/>
+    </wsdl:message>
+    <wsdl:message name="FahrenheitToCelsiusResponse">
+        <wsdl:part name="parameters" element="ns:FahrenheitToCelsiusResponse"/>
+    </wsdl:message>
+    <wsdl:message name="YardToMetreRequest">
+        <wsdl:part name="parameters" element="ns:YardToMetre"/>
+    </wsdl:message>
+    <wsdl:message name="YardToMetreResponse">
+        <wsdl:part name="parameters" element="ns:YardToMetreResponse"/>
+    </wsdl:message>
+    <wsdl:message name="MetreToFeetRequest">
+        <wsdl:part name="parameters" element="ns:MetreToFeet"/>
+    </wsdl:message>
+    <wsdl:message name="MetreToFeetResponse">
+        <wsdl:part name="parameters" element="ns:MetreToFeetResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="ConverterServicePortType">
+        <wsdl:operation name="CelsiusToFahrenheit">
+            <wsdl:input message="ns:CelsiusToFahrenheitRequest" wsaw:Action="urn:CelsiusToFahrenheit"/>
+            <wsdl:output message="ns:CelsiusToFahrenheitResponse" wsaw:Action="urn:CelsiusToFahrenheitResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="KilometreToMile">
+            <wsdl:input message="ns:KilometreToMileRequest" wsaw:Action="urn:KilometreToMile"/>
+            <wsdl:output message="ns:KilometreToMileResponse" wsaw:Action="urn:KilometreToMileResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="PoundToKilogram">
+            <wsdl:input message="ns:PoundToKilogramRequest" wsaw:Action="urn:PoundToKilogram"/>
+            <wsdl:output message="ns:PoundToKilogramResponse" wsaw:Action="urn:PoundToKilogramResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="KilogramtoPound">
+            <wsdl:input message="ns:KilogramtoPoundRequest" wsaw:Action="urn:KilogramtoPound"/>
+            <wsdl:output message="ns:KilogramtoPoundResponse" wsaw:Action="urn:KilogramtoPoundResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="MileToKilometre">
+            <wsdl:input message="ns:MileToKilometreRequest" wsaw:Action="urn:MileToKilometre"/>
+            <wsdl:output message="ns:MileToKilometreResponse" wsaw:Action="urn:MileToKilometreResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="MetreToYard">
+            <wsdl:input message="ns:MetreToYardRequest" wsaw:Action="urn:MetreToYard"/>
+            <wsdl:output message="ns:MetreToYardResponse" wsaw:Action="urn:MetreToYardResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="FeetToMetre">
+            <wsdl:input message="ns:FeetToMetreRequest" wsaw:Action="urn:FeetToMetre"/>
+            <wsdl:output message="ns:FeetToMetreResponse" wsaw:Action="urn:FeetToMetreResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="FahrenheitToCelsius">
+            <wsdl:input message="ns:FahrenheitToCelsiusRequest" wsaw:Action="urn:FahrenheitToCelsius"/>
+            <wsdl:output message="ns:FahrenheitToCelsiusResponse" wsaw:Action="urn:FahrenheitToCelsiusResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="YardToMetre">
+            <wsdl:input message="ns:YardToMetreRequest" wsaw:Action="urn:YardToMetre"/>
+            <wsdl:output message="ns:YardToMetreResponse" wsaw:Action="urn:YardToMetreResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="MetreToFeet">
+            <wsdl:input message="ns:MetreToFeetRequest" wsaw:Action="urn:MetreToFeet"/>
+            <wsdl:output message="ns:MetreToFeetResponse" wsaw:Action="urn:MetreToFeetResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="ConverterServiceSoap11Binding" type="ns:ConverterServicePortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="CelsiusToFahrenheit">
+            <soap:operation soapAction="urn:CelsiusToFahrenheit" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="KilometreToMile">
+            <soap:operation soapAction="urn:KilometreToMile" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="PoundToKilogram">
+            <soap:operation soapAction="urn:PoundToKilogram" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="KilogramtoPound">
+            <soap:operation soapAction="urn:KilogramtoPound" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="MileToKilometre">
+            <soap:operation soapAction="urn:MileToKilometre" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="MetreToYard">
+            <soap:operation soapAction="urn:MetreToYard" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="FeetToMetre">
+            <soap:operation soapAction="urn:FeetToMetre" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="FahrenheitToCelsius">
+            <soap:operation soapAction="urn:FahrenheitToCelsius" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="YardToMetre">
+            <soap:operation soapAction="urn:YardToMetre" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="MetreToFeet">
+            <soap:operation soapAction="urn:MetreToFeet" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="ConverterServiceSoap12Binding" type="ns:ConverterServicePortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="CelsiusToFahrenheit">
+            <soap12:operation soapAction="urn:CelsiusToFahrenheit" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="KilometreToMile">
+            <soap12:operation soapAction="urn:KilometreToMile" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="PoundToKilogram">
+            <soap12:operation soapAction="urn:PoundToKilogram" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="KilogramtoPound">
+            <soap12:operation soapAction="urn:KilogramtoPound" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="MileToKilometre">
+            <soap12:operation soapAction="urn:MileToKilometre" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="MetreToYard">
+            <soap12:operation soapAction="urn:MetreToYard" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="FeetToMetre">
+            <soap12:operation soapAction="urn:FeetToMetre" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="FahrenheitToCelsius">
+            <soap12:operation soapAction="urn:FahrenheitToCelsius" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="YardToMetre">
+            <soap12:operation soapAction="urn:YardToMetre" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="MetreToFeet">
+            <soap12:operation soapAction="urn:MetreToFeet" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="ConverterServiceHttpBinding" type="ns:ConverterServicePortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="CelsiusToFahrenheit">
+            <http:operation location="CelsiusToFahrenheit"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="KilometreToMile">
+            <http:operation location="KilometreToMile"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="PoundToKilogram">
+            <http:operation location="PoundToKilogram"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="KilogramtoPound">
+            <http:operation location="KilogramtoPound"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="MileToKilometre">
+            <http:operation location="MileToKilometre"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="MetreToYard">
+            <http:operation location="MetreToYard"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="FeetToMetre">
+            <http:operation location="FeetToMetre"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="FahrenheitToCelsius">
+            <http:operation location="FahrenheitToCelsius"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="YardToMetre">
+            <http:operation location="YardToMetre"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="MetreToFeet">
+            <http:operation location="MetreToFeet"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="ConverterService">
+        <wsdl:port name="ConverterServiceHttpSoap11Endpoint" binding="ns:ConverterServiceSoap11Binding">
+            <soap:address location="http://cp8202-sali.herokuapp.com/services/ConverterService.ConverterServiceHttpSoap11Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="ConverterServiceHttpSoap12Endpoint" binding="ns:ConverterServiceSoap12Binding">
+            <soap12:address location="http://cp8202-sali.herokuapp.com/services/ConverterService.ConverterServiceHttpSoap12Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="ConverterServiceHttpEndpoint" binding="ns:ConverterServiceHttpBinding">
+            <http:address location="http://cp8202-sali.herokuapp.com/services/ConverterService.ConverterServiceHttpEndpoint/"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

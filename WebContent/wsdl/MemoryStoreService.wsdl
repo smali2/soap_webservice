@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://calc.project.cp8202.com" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://calc.project.cp8202.com">
+    <wsdl:documentation>
+		Please Type your service description here
+	</wsdl:documentation>
+    <wsdl:types>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://calc.project.cp8202.com">
+            <xs:element name="retrieveMemory">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="retrieveMemoryResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="return" type="xs:double"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="removeMemory">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="saveMemory">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="param" type="xs:double"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="removeMemoryRequest">
+        <wsdl:part name="parameters" element="ns:removeMemory"/>
+    </wsdl:message>
+    <wsdl:message name="saveMemoryRequest">
+        <wsdl:part name="parameters" element="ns:saveMemory"/>
+    </wsdl:message>
+    <wsdl:message name="retrieveMemoryRequest">
+        <wsdl:part name="parameters" element="ns:retrieveMemory"/>
+    </wsdl:message>
+    <wsdl:message name="retrieveMemoryResponse">
+        <wsdl:part name="parameters" element="ns:retrieveMemoryResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="MemoryStoreServicePortType">
+        <wsdl:operation name="removeMemory">
+            <wsdl:input message="ns:removeMemoryRequest" wsaw:Action="urn:removeMemory"/>
+        </wsdl:operation>
+        <wsdl:operation name="saveMemory">
+            <wsdl:input message="ns:saveMemoryRequest" wsaw:Action="urn:saveMemory"/>
+        </wsdl:operation>
+        <wsdl:operation name="retrieveMemory">
+            <wsdl:input message="ns:retrieveMemoryRequest" wsaw:Action="urn:retrieveMemory"/>
+            <wsdl:output message="ns:retrieveMemoryResponse" wsaw:Action="urn:retrieveMemoryResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="MemoryStoreServiceSoap11Binding" type="ns:MemoryStoreServicePortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="removeMemory">
+            <soap:operation soapAction="urn:removeMemory" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="saveMemory">
+            <soap:operation soapAction="urn:saveMemory" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="retrieveMemory">
+            <soap:operation soapAction="urn:retrieveMemory" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="MemoryStoreServiceSoap12Binding" type="ns:MemoryStoreServicePortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="removeMemory">
+            <soap12:operation soapAction="urn:removeMemory" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="saveMemory">
+            <soap12:operation soapAction="urn:saveMemory" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="retrieveMemory">
+            <soap12:operation soapAction="urn:retrieveMemory" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="MemoryStoreServiceHttpBinding" type="ns:MemoryStoreServicePortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="removeMemory">
+            <http:operation location="removeMemory"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="saveMemory">
+            <http:operation location="saveMemory"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="retrieveMemory">
+            <http:operation location="retrieveMemory"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="MemoryStoreService">
+        <wsdl:port name="MemoryStoreServiceHttpSoap11Endpoint" binding="ns:MemoryStoreServiceSoap11Binding">
+            <soap:address location="http://cp8202-sali.herokuapp.com/services/MemoryStoreService.MemoryStoreServiceHttpSoap11Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="MemoryStoreServiceHttpSoap12Endpoint" binding="ns:MemoryStoreServiceSoap12Binding">
+            <soap12:address location="http://cp8202-sali.herokuapp.com/services/MemoryStoreService.MemoryStoreServiceHttpSoap12Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="MemoryStoreServiceHttpEndpoint" binding="ns:MemoryStoreServiceHttpBinding">
+            <http:address location="http://cp8202-sali.herokuapp.com/services/MemoryStoreService.MemoryStoreServiceHttpEndpoint/"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

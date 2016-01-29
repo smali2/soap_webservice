@@ -1,0 +1,42 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from CalculatorServiceService WSDL service -->
+
+  <service name="CalculatorService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://calc.project.cp8202.com"/>
+      <parameter name="wsdlServiceElement" value="CalculatorServiceService"/>
+      <parameter name="schemaQualified" value="http://calc.project.cp8202.com"/>
+      <parameter name="wsdlServicePort" value="CalculatorService"/>
+      <parameter name="className" value="com.cp8202.project.calc.CalculatorServiceSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="CalculatorService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="add" qname="operNS:add" xmlns:operNS="http://calc.project.cp8202.com" returnQName="retNS:addReturn" xmlns:retNS="http://calc.project.cp8202.com" returnType="rtns:double" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:value1" xmlns:pns="http://calc.project.cp8202.com" type="tns:double" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:value2" xmlns:pns="http://calc.project.cp8202.com" type="tns:double" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="subtractNumbers" qname="operNS:subtractNumbers" xmlns:operNS="http://calc.project.cp8202.com" returnQName="retNS:subtractNumbersReturn" xmlns:retNS="http://calc.project.cp8202.com" returnType="rtns:double" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:param1" xmlns:pns="http://calc.project.cp8202.com" type="tns:double" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:param2" xmlns:pns="http://calc.project.cp8202.com" type="tns:double" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="divideNumbers" qname="operNS:divideNumbers" xmlns:operNS="http://calc.project.cp8202.com" returnQName="retNS:divideNumbersReturn" xmlns:retNS="http://calc.project.cp8202.com" returnType="rtns:double" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:param1" xmlns:pns="http://calc.project.cp8202.com" type="tns:double" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:param2" xmlns:pns="http://calc.project.cp8202.com" type="tns:double" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="multiplyNumbers" qname="operNS:multiplyNumbers" xmlns:operNS="http://calc.project.cp8202.com" returnQName="retNS:multiplyNumbersReturn" xmlns:retNS="http://calc.project.cp8202.com" returnType="rtns:double" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:param1" xmlns:pns="http://calc.project.cp8202.com" type="tns:double" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:param2" xmlns:pns="http://calc.project.cp8202.com" type="tns:double" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="add multiplyNumbers divideNumbers subtractNumbers"/>
+
+  </service>
+</deployment>
